@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-elixir-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-elixir
+  template:
+    metadata:
+      labels:
+        app: demo-elixir
+    spec:
+      containers:
+      - name: demo-elixir-container
+        image: tu_usuario_docker/demo_elixir:latest
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 4000

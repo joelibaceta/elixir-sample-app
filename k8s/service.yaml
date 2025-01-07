@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-elixir-service
+spec:
+  selector:
+    app: demo-elixir
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 4000
